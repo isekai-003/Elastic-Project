@@ -8,7 +8,7 @@ pipeline {
     // }
     stage('kafka-installation') {
       steps {
-        sh 'ansible-playbook -i inventory KafkaLogstash-Playbooks-main/kafka.yml'
+        sh 'ansible-playbook KafkaLogstash-Playbooks-main/kafka.yml' 
       }
     }
 
