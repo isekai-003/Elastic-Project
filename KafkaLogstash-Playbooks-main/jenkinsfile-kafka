@@ -3,7 +3,10 @@ pipeline {
   stages {
     stage('KAFKA-INSTALLATION') {
       steps {
-        sh 'ansible-playbook KafkaLogstash-Playbooks-main/kafka.yml'
+        sshagent(['ansible']) {
+            sh 'ansible-playbook KafkaLogstash-Playbooks-main/kafka.yml'
+
+}
       }
     }
   }
