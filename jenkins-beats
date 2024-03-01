@@ -1,16 +1,16 @@
 pipeline {
   agent { label 'jenkins-ssh-slave' }
   stages {
-    // stage('beats installation') {
-    //   steps {
-    //     sh 'ansible-playbook beats.yml'
-    //   }
-    // }
-    stage('kafka-installation') {
+    stage('beats installation') {
       steps {
-        sh 'ansible-playbook KafkaLogstash-Playbooks-main/kafka.yml' 
+        sh 'ansible-playbook beats.yml'
       }
     }
+    // stage('kafka-installation') {
+    //   steps {
+    //     sh 'ansible-playbook KafkaLogstash-Playbooks-main/kafka.yml' 
+    //   }
+    // }
 
   }
 }
